@@ -1,59 +1,34 @@
-# ElsaberSite
+💼 Al-Saber Website Project
+🧱 Project Architecture
+The project is built using a three-layer architecture for better organization and separation of concerns:
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
+Business Logic (BL) Layer: Contains the data models and shared interfaces.
 
-## Development server
+Core Layer: Includes services and application logic.
 
-To start a local development server, run:
+Presentation Layer: Handles the UI, implemented using Angular.
 
-```bash
-ng serve
-```
+🛠️ Technologies Used
+HTML5 & CSS3
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Bootstrap – for responsive and consistent styling
 
-## Code scaffolding
+TypeScript
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Angular – used as the main framework for the front-end
 
-```bash
-ng generate component component-name
-```
+📱 Responsive Design
+The entire website is fully responsive and works well across various screen sizes and devices.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+🚀 Angular Concepts Implemented
+Interceptors:
 
-```bash
-ng generate --help
-```
+For displaying a loader during HTTP requests
 
-## Building
+For attaching authorization tokens to outgoing HTTP requests
 
-To build the project run:
+Guards – to protect routes and restrict unauthorized access
 
-```bash
-ng build
-```
+Services – for handling business logic and API communication
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Standalone Components – used instead of traditional Angular modules for better scalability (if applicable)
