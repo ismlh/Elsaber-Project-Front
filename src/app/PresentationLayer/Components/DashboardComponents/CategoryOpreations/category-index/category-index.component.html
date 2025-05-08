@@ -1,0 +1,43 @@
+<input type="text" class="form-control form-control-lg text-center" placeholder="اضــافــة نــوع مـــنـــتـــج"
+  required="true" aria-label="اضــافــة نــوع مـــنـــتـــج" aria-describedby="inputGroup-sizing-lg" id="categoryName"
+  [(ngModel)]="categoryName" />
+@if(!isEdit) {
+<h2 class="btn btn-outline-success form-control fs-4 mb-4 mt-2" (click)="AddCategory()">اضــافــة
+  نــوع</h2>
+} @else {
+<h2 class="btn btn-outline-success form-control fs-4 mb-4 mt-2" (click)="UpdateCategory()">تــعـديـل
+  نــوع</h2>
+}
+
+
+<table class="table table-striped table-bordered table-hover table-sm">
+  <thead class="table-head text-center">
+    <tr>
+      <th>أســم الـــنــوع</th>
+      <th>الــمــنــتــجات الموجوده في هذا الـــنــوع</th>
+      <th>تــــعـــديــل</th>
+      <th>حـــــذف</th>
+    </tr>
+  </thead>
+  <tbody class="table-body text-center">
+    @for (category of categories; track category.id) {
+    <tr>
+      <td>{{category.categoryName}}</td>
+      <td>{{category.products}}</td>
+
+      <td>
+        <h2 class="btn btn-outline-info form-control fs-4" (click)="Edit(category.categoryName, category.id)">
+          تــعـديـل
+        </h2>
+      </td>
+
+      <td>
+        <h2 class="btn btn-outline-danger form-control fs-4" (click)="Delete(category.id)">
+          حـــــذف
+        </h2>
+      </td>
+    </tr>
+    }
+
+  </tbody>
+</table>

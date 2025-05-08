@@ -1,0 +1,33 @@
+<h2 class="btn btn-outline-success form-control fs-4" routerLink="/Dashboard/AddService">اضــافــة
+  خـــدمــة</h2>
+<table class="table table-striped table-bordered table-hover table-sm">
+  <thead>
+    <tr>
+      <th>أســم الخـــدمــة</th>
+      <th> وصــف الخـــدمــة</th>
+      <th>صــورة الخـــدمــة</th>
+      <th>تــــعـــديــل</th>
+      <th>حـــــذف</th>
+
+    </tr>
+  </thead>
+  <tbody class="table-body text-center">
+    <tr *ngFor="let service of services;">
+      <td>{{service.name}}</td>
+      <td>{{ service.description}}</td>
+      <td><img [src]="'data:image/jpeg;base64,' + service.imageUrl" width="40px" height="40px" alt="Company Logo"
+          class="company-logo rounded-circle"></td>
+      <td>
+        <h2 class="btn btn-outline-info form-control fs-4" routerLink="/Dashboard/EditService/{{service.id}}">
+          تــعـديـل
+        </h2>
+      </td>
+
+      <td>
+        <h2 class="btn btn-outline-danger form-control fs-4" (click)="DeleteService(service.id)">
+          حـــــذف
+        </h2>
+      </td>
+    </tr>
+  </tbody>
+</table>

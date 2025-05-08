@@ -1,0 +1,70 @@
+<form #order="ngForm" (ngSubmit)="EditOrder()">
+
+  <!-- Client Name Input -->
+  <div>
+    <label for="name">اســـم الـــعـــمــيل</label>
+    <input type="text" class="form-control my-3" placeholder="اســـم الـــعـــمــيل" #name="ngModel" required
+      [(ngModel)]="ClientOrder.name" name="name" id="name" />
+    <!-- Show error messages for User Name -->
+    <div *ngIf="name.invalid && name.touched" class="text-danger">
+      <div *ngIf="name.errors?.['required']">اســـم الـــعـــمــيل مـــطــلوب</div>
+
+    </div>
+  </div>
+
+  <!-- Client email Input -->
+  <div>
+    <label for="email">بريـــد الـــعـــمــيل</label>
+    <input type="email" class="form-control my-3" placeholder="بريـــد  الـــعـــمــيل" #email="ngModel"
+      [(ngModel)]="ClientOrder.email" name="email" id="email" />
+  </div>
+
+  <!-- User Phone Input -->
+  <div>
+    <label for="phoneNumber">هـــاتــف الـــعـــمــيل</label>
+    <input type="text" class="form-control my-3" placeholder="هـــاتــف الـــعـــمــيل " #phoneNumber="ngModel" required
+      id="phoneNumber" [(ngModel)]="ClientOrder.phoneNumber" name="phoneNumber" />
+    <!-- Show error messages for User Phone -->
+    <div *ngIf="phoneNumber.invalid && phoneNumber.touched" class="text-danger">
+      <div *ngIf="phoneNumber.errors?.['required']">هـــاتــف الـــعـــمــيل مـــطــلـوب</div>
+
+    </div>
+  </div>
+
+  <!-- order Message Title Input -->
+  <div>
+    <label for="messageTitle">عــــنـوان الـــرســــالـــه</label>
+
+    <input type="text" class="form-control my-3" id="messageTitle" placeholder="عــــنـوان الـــرســــالـــه"
+      #messageTitle="ngModel" [(ngModel)]="ClientOrder.messageTitle" name="messageTitle" />
+  </div>
+
+
+  <!-- order Message  Input -->
+  <div>
+    <label for="message">الـــرســــالـــه</label>
+    <input type="text" id="message" class="form-control my-3" placeholder=" الـــرســــالـــه" #message="ngModel"
+      [(ngModel)]="ClientOrder.message" name="message" />
+  </div>
+
+  <div class="mb-3">
+    <label for="country" class="form-label">الـــدولـــه</label>
+    <select class="form-select form-select-lg" [(ngModel)]="ClientOrder.country" name="country" id="country">
+      @for (country of countires; track $index) {
+      <option [value]="country.name">{{country.name}} </option>
+      }
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="product" class="form-label">الـــمـــنـــتـــج</label>
+    <select class="form-select form-select-lg" [(ngModel)]="ClientOrder.product" name="product" id="product">
+      @for (product of products; track $index) {
+      <option [value]="product.id">{{product.name}} </option>
+      }
+    </select>
+  </div>
+
+
+  <button type="submit" [disabled]="order.invalid" class="btn btn-outline-success form-control my-3">حـــفـــظ</button>
+</form>

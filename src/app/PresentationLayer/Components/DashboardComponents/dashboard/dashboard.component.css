@@ -1,0 +1,50 @@
+.content {
+  width: 90%;
+}
+.content h3 {
+  color: var(--white-color);
+}
+nav {
+  direction: rtl;
+}
+.nav-item {
+  margin: 0 10px;
+}
+.Active {
+  color: #02994d !important;
+}
+.a-style {
+  color: #000000;
+  fon1t-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 0 1px var(--main-color);
+  text-decoration: none; /* Remove underline on hover for smaller screens */
+  padding: 8px 8px; /* Add padding for better spacing */
+  margin: 10px 0px !important;
+
+  /* Shadow effect for links */
+}
+
+.nav-item {
+  transition: all 1s ease; /* Smooth transition for hover effects */
+}
+@media screen and (max-width: 768px) {
+  .nav-item:hover {
+    margin-right: 20px; /* Add margin on hover for smaller screens */
+    color: #02994d !important; /* Change color on hover for smaller screens */
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .a-style {
+    font-size: 15px; /* Adjust font size for smaller screens */
+  }
+  .navbar-container {
+    align-items: center; /* Center items horizontally */
+    box-shadow: none; /* Remove shadow for smaller screens */
+  }
+  .nav-link:hover {
+    margin-right: 20px; /* Add margin on hover for smaller screens */
+    color: #02994d !important; /* Change color on hover for smaller screens */
+  }
+}

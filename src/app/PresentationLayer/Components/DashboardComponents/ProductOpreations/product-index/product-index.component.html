@@ -1,0 +1,45 @@
+<h2 class="btn btn-outline-success form-control fs-4" routerLink="/Dashboard/AddProduct">اضــافــة مـــنـــتـــج
+</h2>
+<table class="table table-striped text-center table-bordered table-hover table-sm">
+  <thead>
+    <tr>
+      <th>أســم الــمــنــتــج</th>
+      <th>الـــوصــف</th>
+      <th>الـــصــفات</th>
+      <th>المقاسات</th>
+      <th>اقـــل قـــمــيــه للــطــلب</th>
+      <th>نــوع الــمــنــتــج</th>
+      <th>صــور الــمــنــتــج</th>
+      <th>تـــعـــديـــل</th>
+      <th>حــــذف</th>
+    </tr>
+  </thead>
+  <tbody class="table-body">
+    <tr *ngFor="let product of products;">
+      <td>{{product.name}}</td>
+      <td>{{ product.description}}</td>
+      <td>{{ product.detalis}}</td>
+      <td>{{ product.size}}</td>
+      <td>{{ product.minQty}}</td>
+      <td>{{ product.categoryName}}</td>
+      <td>
+        @for (image of product.images; track $index) {
+        <img [src]="'data:image/jpeg;base64,' + image.image" width="40px" height="40px" alt="Company Logo"
+          class="rounded-circle text-center my-2">
+        <br />
+        }
+      </td>
+
+      <td>
+        <h2 class="btn btn-outline-info form-control fs-4" routerLink="/Dashboard/EditProduct/{{product.id}}">
+          تـــعـــديـــل
+        </h2>
+      </td>
+
+      <td>
+        <h2 class="btn btn-outline-danger form-control fs-4" (click)="DeleteProduct(product.id)">حــــذف
+        </h2>
+      </td>
+    </tr>
+  </tbody>
+</table>

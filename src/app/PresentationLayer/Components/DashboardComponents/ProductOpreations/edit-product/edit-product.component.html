@@ -1,0 +1,68 @@
+<form #newProduct="ngForm" (ngSubmit)="EditProduct()">
+
+
+  <!-- Product Name Input -->
+  <div>
+    <label for="name">اســـم الــمــنــتــج</label>
+    <input type="text" class="form-control my-3" placeholder="اســـم الــمــنــتــج" #name="ngModel" required
+      [(ngModel)]="product.name" name="name" id="name" />
+    <!-- Show error messages for User Name -->
+    <div *ngIf="name.invalid && name.touched" class="text-danger">
+      <div *ngIf="name.errors?.['required']">اســـم الــمــنــتــج مـــطــلوب</div>
+    </div>
+  </div>
+
+  <!-- Product description Input -->
+  <div>
+    <label for="description">وصــــف الــمــنــتــج</label>
+    <input type="text" class="form-control my-3" placeholder="وصــــف  الــمــنــتــج" #description="ngModel"
+      [(ngModel)]="product.description" name="description" id="description" />
+  </div>
+
+  <!-- Product detalis Input -->
+  <div>
+    <label for="detalis">مواصفات الــمــنــتــج</label>
+    <input type="text" class="form-control my-3" placeholder="مواصفات  الــمــنــتــج" #detalis="ngModel"
+      [(ngModel)]="product.detalis" name="detalis" id="detalis" />
+  </div>
+
+  <!-- Product size Input -->
+  <div>
+    <label for="size">مقاسات الــمــنــتــج</label>
+    <input type="text" class="form-control my-3" placeholder="مقاسات  الــمــنــتــج" #size="ngModel"
+      [(ngModel)]="product.size" name="size" id="size" />
+  </div>
+
+  <!-- Product  MinQty Input -->
+  <div>
+    <label for="minQty">اقـــل كــمــيــه</label>
+    <input type="number" class="form-control my-3" placeholder="اقـــل كــمــيــه " #phone="ngModel" required
+      [(ngModel)]="product.minQty" name="minQty" id="minQty" />
+  </div>
+
+  <!-- Product Category Input -->
+  <div class="mb-3">
+    <label for="categoryId" class="form-label">اخــتــار نــوع الــمــنــتــج</label>
+    <select class="form-select" id="categoryId" [(ngModel)]="product.categoryId" name="categoryId" required>
+      <option *ngFor="let category of categories" [value]="category.id">{{ category.categoryName }}</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="imageUrl" class="form-label d-block">اخــتــار صور الــمــنــتــج</label>
+    <input type="file" (change)="onFileSelected($event)" multiple id="logoUrl" name="images">
+  </div>
+
+
+
+  <button type="submit" class="btn btn-outline-success form-control my-3 mb-5">حــــفـــظ</button>
+</form>
+@if(product.images.length>0)
+{
+@for (image of product.images; track image.id) {
+<img [src]="'data:image/jpeg;base64,' + image.image" width="60px" height="60px" alt="Product Image"
+  class="rounded-circle  my-2 mx-auto d-block">
+<button class="btn btn-outline-danger form-control  p-1 mb-5" (click)="DeleteImage(image.id)">حــــذف {{image.name}}
+</button>
+}
+}

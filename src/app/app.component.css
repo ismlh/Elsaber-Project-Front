@@ -1,0 +1,20 @@
+.go-to-top-btn {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 0px;
+  height: 0px;
+  background-color: transparent; /* Primary color */
+  color: white;
+  padding: 0px;
+  border: 40px solid transparent;
+  border-bottom: 40px solid var(--main-color);
+  cursor: pointer;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.go-to-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+}

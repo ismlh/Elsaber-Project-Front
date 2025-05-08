@@ -1,0 +1,45 @@
+@if(isAvalibleToAdd){
+<h2 class="btn btn-outline-success form-control fs-4" routerLink="/Dashboard/AddCompany">اضــافــة بـيـانــات
+  الــشــركــة</h2>
+}
+<table class="table table-striped table-bordered table-hover table-sm">
+  <thead>
+    <tr>
+      <th>أســم الــشركــة</th>
+      <th>عــــنـوان الــشــركــة</th>
+      <th>الـــوصــف</th>
+      <th>رابـــط الفــيــسـبـوك</th>
+      <th>رابـــط الــيـوتـيـوب</th>
+      <th>رابـــط الانـسـتـجـرام</th>
+      <th>رابـــط تـويـتـر</th>
+      <th>الــرقــم</th>
+      <th>البريد الالكتروني</th>
+      <th>صــورة الــشــركــة</th>
+    </tr>
+  </thead>
+  <tbody class="table-body">
+    <tr *ngFor="let company of Companies;">
+      <td>{{company.name}}</td>
+      <td>{{ company.title}}</td>
+      <td>{{ company.description}}</td>
+      <td>{{ company.facebookUrl}}</td>
+      <td>{{ company.youtubeUrl}}</td>
+      <td>{{ company.instgramUrl}}</td>
+      <td>{{ company.twitterUrl}}</td>
+      <td>{{ company.phone}}</td>
+      <td>{{ company.gmail}}</td>
+      <td><img [src]="'data:image/jpeg;base64,' + company.logoUrl" width="24px" height="24px" alt="Company Logo"
+          class="company-logo"></td>
+
+    </tr>
+
+
+  </tbody>
+</table>
+
+@if(!isAvalibleToAdd){
+<h2 class="btn btn-outline-info form-control fs-4" routerLink="/Dashboard/EditCompanyData/{{Company.id}}">الــتــعـديـل
+  عـلـي بـيـانــات الــشــركــة</h2>
+<h2 class="btn btn-outline-danger form-control fs-4" (click)="DeleteCompany(Company.id)">محو بـيـانــات الــشــركــة
+</h2>
+}

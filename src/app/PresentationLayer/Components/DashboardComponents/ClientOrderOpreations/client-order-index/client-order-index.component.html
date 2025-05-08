@@ -1,0 +1,31 @@
+<table class="table table-striped table-bordered table-hover table-sm">
+  <thead>
+    <tr>
+      <th>أســم الــعــمــيــل</th>
+      <th>بــريــد الــعــمــيــل</th>
+      <th>رقــــم الــعــمــيــل</th>
+      <th>دولـــة الــعــمــيــل </th>
+      <th>عـنوان الرســالــه</th>
+      <th>مـضـمـون الرســالــه</th>
+      <th>الـــمــنــتــج </th>
+      <th>تـــعـــديـــل</th>
+      <th> حـــذف</th>
+    </tr>
+  </thead>
+  <tbody class="table-body">
+    <tr *ngFor="let order of orders;">
+      <td>{{order.name}}</td>
+      <td>{{ order.email}}</td>
+      <td>{{ order.phoneNumber}}</td>
+      <td>{{ order.country}}</td>
+      <td>{{ order.messageTitle}}</td>
+      <td>{{ order.message}}</td>
+      <td>{{ order.product}}</td>
+      <td><button class="btn btn-outline-info" routerLink="/Dashboard/EditClientOrder/{{order.id}}">تــعــديــل</button>
+      </td>
+      <td><button class="btn btn-outline-danger" (click)="DeleteClientOrder(order.id)">حــذف</button></td>
+    </tr>
+
+
+  </tbody>
+</table>

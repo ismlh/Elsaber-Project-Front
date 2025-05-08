@@ -1,0 +1,115 @@
+#aboveNavbar {
+  background-color: var(--main-color); /* Light gray background */
+  width: 100%; /* Full width */
+  height: 40px;
+}
+.social-links img {
+  width: 24px; /* Set the width of the icons */
+  height: 24px; /* Set the height of the icons */
+  margin: 0 5px; /* Add some space between the icons */
+}
+.content {
+  width: 90%;
+}
+.content h3 {
+  color: var(--white-color);
+}
+
+.navbar-content {
+  background-color: var(--white-color);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  box-shadow: 0px 2px 5px #ababab;
+}
+
+nav {
+  direction: rtl;
+}
+
+.navbar-collapse {
+  transition: all 1.2s ease-in-out;
+  overflow: hidden;
+}
+
+.navbar-toggler {
+  transition: all 1.2s ease-in-out;
+  border: none;
+  outline: none;
+}
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+.navbar-toggler span {
+  background-color: var(--main-color);
+  width: 30px;
+  height: 3px;
+  display: block;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+}
+.nav-item {
+  margin: 0 10px;
+}
+
+.Active {
+  color: var(--main-color) !important;
+}
+.a-style {
+  color: #000000;
+  fon1t-weight: bold;
+  font-size: 22px !important;
+  font-family: "cairo-regular", sans-serif;
+  cursor: pointer;
+}
+.pricePlan {
+  background-color: var(--orange-color);
+  color: #fff;
+  width: 160px;
+  height: 52px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid var(--orange-color);
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+.nav-item {
+  transition: all 1s ease; /* Smooth transition for hover effects */
+}
+@media screen and (max-width: 992px) {
+  .nav-item:hover {
+    margin-right: 20px; /* Add margin on hover for smaller screens */
+    color: var(
+      --main-color
+    ) !important; /* Change color on hover for smaller screens */
+  }
+  .navbar-collapse {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Add shadow to the navbar */
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .a-style {
+    font-size: 17px !important; /* Adjust font size for smaller screens */
+  }
+  .navbar-container {
+    box-shadow: none; /* Remove shadow for smaller screens */
+  }
+  .nav-link:hover {
+    margin-right: 20px; /* Add margin on hover for smaller screens */
+    color: var(
+      --main-color
+    ) !important; /* Change color on hover for smaller screens */
+  }
+  .pricePlan {
+    width: 130px; /* Adjust width for smaller screens */
+    height: 40px; /* Adjust height for smaller screens */
+    font-size: 14px; /* Adjust font size for smaller screens */
+    margin: 0 auto; /* Center the button */
+    display: block; /* Make it a block element */
+  }
+}

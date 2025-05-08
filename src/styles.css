@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+html {
+  scroll-behavior: Smooth;
+}
+html {
+  direction: rtl;
+}
+body {
+  font-family: "Cairo", sans-serif;
+  overflow-x: hidden;
+}
+:root {
+  --main-color: #009900;
+  --white-color: #ffffff;
+  --orange-color: #ff7d00;
+  --sidebar-width: 280px;
+  --sidebar-width-collapsed: 80px;
+}

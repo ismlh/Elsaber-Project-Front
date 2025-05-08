@@ -1,0 +1,27 @@
+<form #Service="ngForm" (ngSubmit)="EditService()">
+
+  <!-- Service Name Input -->
+  <div>
+    <input type="text" class="form-control my-3" placeholder="اســـم الخـــدمــة" #name="ngModel" required
+      [(ngModel)]="serviceToEdit.name" name="name" />
+    <!-- Show error messages for Service Name -->
+    <div *ngIf="name.invalid && name.touched" class="text-danger">
+      <div *ngIf="name.errors?.['required']">اســـم الخـــدمــة مـــطــلوب</div>
+
+    </div>
+  </div>
+
+  <!-- Service description Input -->
+  <div>
+    <input type="text" class="form-control my-3" placeholder="وصــــف  الخـــدمــة" #description="ngModel"
+      [(ngModel)]="serviceToEdit.description" name="description" />
+  </div>
+
+  <div class="mb-3">
+    <label for="imageUrl" class="form-label d-block">صــورة الخـــدمــة</label>
+    <input type="file" (change)="onFileSelected($event)" required id="imageUrl" name="imageUrl">
+  </div>
+
+  <button type="submit" [disabled]="Service.invalid"
+    class="btn btn-outline-success form-control my-3">حـــفـــظ</button>
+</form>

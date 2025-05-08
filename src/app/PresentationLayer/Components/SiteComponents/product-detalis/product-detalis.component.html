@@ -1,0 +1,83 @@
+<div class="container productDetalis py-5">
+  <div class="row d-flex justify-content-between">
+    <!-- If images exist -->
+    <ng-container *ngIf="product.images; else noImages">
+      <div class="col-lg-6 offset-md-1">
+        <div class="row">
+          <!-- Thumbnail Images -->
+          <div class="col-lg-4 images order-2 order-lg-1">
+            <div class="PrdouctImages d-flex flex-row flex-lg-column justify-content-evenly  text-center">
+              <div class="img" *ngFor="let image of product.images; index as i" style="border-radius: 16px;">
+                <img class="my-3" #imgClicked (click)="ChangeImage(imgClicked, mainImage)"
+                  [src]="'data:image/jpeg;base64,' + image.image" width="61" height="60" style="border-radius: 16px;"
+                  alt="شركه لتصدير الثوم والبصل والفواكه">
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Image -->
+          <div class="col-lg-8 order-1 order-lg-2">
+            <img width="100%" height="380px" style="border-radius: 25px;" #mainImage
+              [src]="'data:image/jpeg;base64,' + product.images[0].image" alt="">
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Info (shared for both cases) -->
+      <div class="col-lg-5">
+        <ng-container *ngTemplateOutlet="productInfo"></ng-container>
+      </div>
+    </ng-container>
+
+    <!-- If no images -->
+    <ng-template #noImages>
+      <div class="col-md-12">
+        <ng-container *ngTemplateOutlet="productInfo"></ng-container>
+      </div>
+    </ng-template>
+
+    <!-- Shared Product Info Template -->
+    <ng-template #productInfo>
+      <h3 class="p-Name">{{ product.name }}</h3>
+      <p class="p-Description">{{ product.description }}</p>
+      <div class="hr-line my-4"></div>
+      <p class="min-qty">أقل كمية <span>{{ product.minQty }}</span></p>
+      <div class="hr-line my-4"></div>
+      <div class="d-flex">
+        <p class="min-qty col-md-4"><span>طرق الدفع</span></p>
+        <div class="paysWays col-md-8">
+          <img src="Assets/Images/ProoductsPage/Visa.png" width="24" height="24" alt="">
+          <img src="Assets/Images/ProoductsPage/PayPal.png" width="24" height="24" alt="">
+          <img src="Assets/Images/ProoductsPage/Mastercard.png" width="24" height="24" alt="">
+        </div>
+      </div>
+      <div class="buttons d-flex">
+        <button class="btn1" routerLink="/contactPage">طلب عـــرض ســـعـــر</button>
+        <button class="btn2" (click)="openWhatsapp()">للتواصل عبر الواتــــســـاب</button>
+      </div>
+    </ng-template>
+  </div>
+
+  <div class="text-center prd-detalis mt-5 mb-4 p-1">
+    <span>تفاصيل المنتج</span>
+  </div>
+  <p class="text-muted" style="color: #4D4D4D; font-size: 24px;">{{product.detalis}}</p>
+
+  <p class="relatedProducts">منتجات ذات صلة</p>
+
+  <div class="row my-5 mb-3 gapY justify-content-center">
+    @for (product of relatedProducts; track product.id) {
+    <div class="col-lg-3  col-6">
+      <div class="product">
+        <img *ngIf="product.images" [src]="'data:image/jpeg;base64,'+product.images[0].image" class="d-block mx-auto"
+          width="100%" style="border-radius: 16px;" alt="">
+        <p style="color: var(--main-color); font-size: 32px;"> {{product.name}}</p>
+        <p style="font-size: 16px; line-height: 22px;">
+          {{product.size}}</p>
+        <button routerLink="/ProductDetalis/{{product.id}}">تفاصيل</button>
+      </div>
+    </div>
+    }
+
+  </div>
+</div>

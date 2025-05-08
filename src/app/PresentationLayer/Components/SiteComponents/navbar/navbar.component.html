@@ -1,0 +1,78 @@
+<div id="aboveNavbar" class="p-2 d-none d-lg-block">
+  <div class="content  mx-auto  d-flex justify-content-between align-items-center">
+    <h3 class="fw-bolder">ألــــصــــابــــر جــــــروب</h3>
+    <div class="social-links pb-3 d-flex justify-content-between align-items-center">
+      @if (company.facebookUrl!=null && company.facebookUrl!=""&&company.facebookUrl!="undefined") {
+      <a [href]="company.facebookUrl" target="_blank"><img src="Assets/Images/Facebook.png" alt="Facebook"></a>
+      }
+      @else {
+      <a [href]=""><img src="Assets/Images/Facebook.png" alt="Facebook"></a>
+
+      }
+      @if (company.twitterUrl!=null && company.twitterUrl!=""&&company.twitterUrl!="undefined") {
+      <a [href]="company.twitterUrl" target="_blank"><img src="Assets/Images/Twitter.png" alt="Twitter"></a>
+      }
+      @else {
+      <a [href]=""><img src="Assets/Images/Twitter.png" alt="Twitter"></a>
+      }
+      @if (company.instgramUrl!=null && company.instgramUrl!=""&&company.instgramUrl!="undefined") {
+      <a [href]="company.instgramUrl" target="_blank"><img src="Assets/Images/Instgram.png" alt="Instagram"></a>
+      }
+      @else {
+      <a [href]=""><img src="Assets/Images/Instgram.png" alt="Instagram"></a>
+      }
+      <a [href]="'https://wa.me/' + company.phone" target="_blank"><img src="Assets/Images/Whatsapp.png"
+          alt="WhatsApp"></a>
+    </div>
+  </div>
+</div>
+<div class="navbar-content d-flex justify-content-around align-items-center">
+  <div class="logo  order-1">
+    <img src="Assets/Images/056 1.png" alt="Logo" class="logo-img">
+  </div>
+  <nav class="navbar navbar-expand-lg mt-2  order-0 order-lg-2  ">
+    <div class="container-fluid navbar-container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto d-flex justify-content-center  mb-2 mb-lg-0  ">
+          <li class="nav-item">
+            <a class="nav-link a-style " aria-current="page" routerLink="/Home"
+              routerLinkActive="Active">ألــــــرئــــــيـــــســـــيــــة</a>
+          </li>
+          @if(IsDashboardLink){
+          <li class="nav-item">
+            <a class="nav-link a-style " aria-current="page" routerLink="/Dashboard" routerLinkActive="Active">لوحة
+              التحكم</a>
+          </li>
+          }
+
+          <li class="nav-item">
+            <a class="nav-link a-style " aria-current="page" (click)="scrollTo('services')">الــخــدمــات</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link a-style " aria-current="page" routerLinkActive="Active"
+              routerLink="/ProductsPage">الــمــنــتــجات</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link a-style " aria-current="page" routerLink="/contactPage" routerLinkActive="Active">للتواصل
+              معنا</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link a-style" aria-current="page" (click)="scrollTo('questionAndAnserSection')">
+              عن
+              الشركة</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="pricePlanDiv d-none d-sm-block order-3">
+    <button class="pricePlan ms-auto"> <img class="mx-2" width="24" height="24" src="Assets/Images/coin.png">خـطـة
+      الاسـعـار</button>
+  </div>
+</div>

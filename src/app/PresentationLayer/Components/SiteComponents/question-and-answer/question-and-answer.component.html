@@ -1,0 +1,17 @@
+<div class="container py-5 pt-3" id="questionAndAnserSection">
+  <h2 class="fw-bolder h2-style">سؤال وجواب حول شركة تصدير المحاصيل الزراعية والخدمات المقدمة</h2>
+  <div class="questions d-flex flex-column align-items-center justify-content-center">
+
+    @for (question of Questions; track $index) {
+    <div class="question" title="اظهار اجابة السوال {{question.question}}"
+      (click)="answerId===question.id? answerId=0 : answerId=question.id">
+      <span><img src="Assets/Images/HomeImages/+.png" alt=""></span>
+      <span>{{question.question}} ؟</span>
+    </div>
+    @if(answerId==question.id) {
+    <div class="answer mt-2 mb-0   p-3 rounded-3">
+      <p>{{question.answer}}</p>
+    </div>
+    }
+    }
+  </div>

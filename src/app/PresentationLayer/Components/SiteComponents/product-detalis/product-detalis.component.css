@@ -1,0 +1,107 @@
+.p-Name {
+  color: var(--main-color);
+  font-size: 32px;
+  font-weight: bold;
+}
+.p-Description {
+  font-size: 24px;
+  font-weight: 300;
+  color: #4d4d4d;
+  line-height: 36px;
+}
+.hr-line {
+  background-color: #044d1d;
+  height: 1px;
+  width: 100%;
+}
+.min-qty {
+  color: #000000;
+  font-size: 22px;
+  font-weight: 400;
+}
+.min-qty span {
+  color: #4d4d4d;
+  margin: 0 20px;
+}
+.paysWays img {
+  margin: 0 15px;
+}
+.buttons button {
+  width: 45%;
+  border-radius: 16px;
+  font-size: 16px;
+  padding: 5px 25px;
+  border: none;
+  outline: none;
+}
+
+.buttons .btn1 {
+  background-color: var(--main-color);
+  color: #fff;
+  margin-left: 5px;
+}
+.buttons .btn2 {
+  background-color: #d9ecd9;
+  color: #3f9f42;
+  font-weight: border;
+}
+
+.prd-detalis {
+  background-color: #c5e2c6;
+  color: #044d1d;
+  border-radius: 16px;
+  font-size: 24px;
+}
+
+@media (max-width: 1120px) {
+  .buttons {
+    display: block !important;
+  }
+  .buttons button {
+    width: 100%;
+    font-size: 20px;
+  }
+  .buttons .btn1 {
+    margin-left: 0px;
+    margin-bottom: 20px;
+  }
+}
+
+.relatedProducts {
+  font-size: 32px;
+  line-height: 39px;
+  color: var(--main-color);
+  font-weight: bolder;
+  margin-top: 35px;
+}
+
+.product {
+  background-color: #f2f2f2;
+  padding: 16px;
+  border-radius: 32px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.product button {
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 16px;
+  border: none;
+  width: 100%;
+  padding: 5px;
+}
+.gapY {
+  gap: 20px 0px;
+}
+
+@media (max-width: 768px) {
+  .p-Name {
+    color: #000000;
+  }
+  .p-Description {
+    font-size: 18px;
+  }
+}

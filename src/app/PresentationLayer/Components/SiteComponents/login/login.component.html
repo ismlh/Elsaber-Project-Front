@@ -1,0 +1,17 @@
+<div class="login-page vh-100 ">
+
+  <form (ngSubmit)="Login()" #login="ngForm" class="login-form border-5">
+    <div class="mb-3">
+      <label for="userName">اسم المستخدم</label>
+      <input type="text" #userName="ngModel" [(ngModel)]="loginObj.userName" name="userName" id="userName"
+        placeholder="اسم المستخدم" />
+    </div>
+
+    <div class="mb-3">
+      <label for="password" style="text-align: end !important;"> كلمة المرور</label>
+      <input type="password" #password="ngModel" [(ngModel)]="loginObj.password" name="password" id="password"
+        placeholder=" كلمة المرور" />
+    </div>
+    <button type="submit">تسجيل الدخول</button>
+  </form>
+</div>

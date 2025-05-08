@@ -1,0 +1,77 @@
+<div class="main w-100 vh-100">
+  <div class=" centerElement">
+    <div class="contactform col-md-4 col-10 p-4">
+      <form class="p-0 " #order="ngForm" (ngSubmit)="AddClientOrder()">
+
+        <!-- Client Name Input -->
+        <div class="mt-0">
+          <label for="name"> الاسم</label>
+          <input type="text" class="form-control my-0" placeholder=" الاسم" #name="ngModel" required
+            [(ngModel)]="ClientOrder.name" name="name" id="name" />
+          <!-- Show error messages for User Name -->
+          <div *ngIf="name.invalid && name.touched" class="text-danger">
+            <div *ngIf="name.errors?.['required']">الاسم مـــطــلوب</div>
+
+          </div>
+        </div>
+
+        <!-- Client email Input -->
+        <div>
+          <label for="email"> البريد الالـــكترونــي </label>
+          <input type="email" class="form-control my-0" placeholder="  البريد الالـــكترونــي " #email="ngModel"
+            [(ngModel)]="ClientOrder.email" name="email" id="email" />
+        </div>
+
+        <!-- User Phone Input -->
+        <div>
+          <label for="phoneNumber"> ألهاتف</label>
+          <input type="text" class="form-control my-0" placeholder=" الهاتف " #phoneNumber="ngModel" required
+            id="phoneNumber" [(ngModel)]="ClientOrder.phoneNumber" name="phoneNumber" />
+          <!-- Show error messages for User Phone -->
+          <div *ngIf="phoneNumber.invalid && phoneNumber.touched" class="text-danger">
+            <div *ngIf="phoneNumber.errors?.['required']">الهاتف مـــطــلـوب</div>
+          </div>
+        </div>
+
+        <div>
+          <label for="country" class="form-label">الـــدولـــه</label>
+          <select class="form-select form-select-lg" [(ngModel)]="ClientOrder.country" name="country" id="country">
+            @for (country of countires; track $index) {
+            <option [value]="country.name">{{country.name}} </option>
+            }
+          </select>
+        </div>
+
+        <div>
+          <label for="product" class="form-label">الـــمـــنـــتـــج</label>
+          <select class="form-select form-select-lg" [(ngModel)]="ClientOrder.product" name="product" id="product">
+            @for (product of products; track $index) {
+            <option [value]="product.id">{{product.name}} </option>
+            }
+          </select>
+        </div>
+
+
+        <!-- order Message Title Input -->
+        <div>
+          <label for="messageTitle">عــــنـوان الـــرســــالـــه</label>
+
+          <input type="text" class="form-control my-0" id="messageTitle" placeholder="عــــنـوان الـــرســــالـــه"
+            #messageTitle="ngModel" [(ngModel)]="ClientOrder.messageTitle" name="messageTitle" />
+        </div>
+
+
+        <!-- order Message  Input -->
+        <div>
+          <label for="message">الـــرســــالـــه</label>
+          <textarea id="message" class="form-control my-0" placeholder=" الـــرســــالـــه" #message="ngModel"
+            [(ngModel)]="ClientOrder.message" name="message"></textarea>
+        </div>
+
+
+
+        <button type="submit" [disabled]="order.invalid" class="btn form-control mt-3">ارسل استفسارك</button>
+      </form>
+    </div>
+  </div>
+</div>

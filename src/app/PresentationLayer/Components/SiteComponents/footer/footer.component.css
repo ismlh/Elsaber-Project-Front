@@ -1,0 +1,39 @@
+footer {
+  background-color: #003a00;
+  color: #fff;
+}
+
+footer h3 {
+  font-family: "cairo-bold", sans-serif;
+  font-size: 34px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+footer p {
+  font-family: "cairo-regular", sans-serif;
+  font-size: 22px;
+}
+
+.copyrighy {
+  font-family: "cairo-regular", sans-serif;
+  font-size: 16px !important;
+  color: rgb(207, 207, 207);
+  text-align: center;
+  padding: 0px;
+  margin-bottom: 0px !important;
+}
+@media (max-width: 768px) {
+  .copyrighy {
+    font-size: 12px !important;
+  }
+}
+
+.anchorsOnMobile a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "cairo-bold";
+  text-align: center;
+  margin: 10px 0px;
+}

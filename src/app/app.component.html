@@ -1,0 +1,15 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#009900" type="timer" [fullScreen]="true">
+  <p style="color: white"> جاري التحميل </p>
+</ngx-spinner>
+@if (IsDashboard) {
+<app-dashboard></app-dashboard>
+}
+@else{
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+<button class="go-to-top-btn" title="الذهاب لاعلي الصفحه" (click)="scrollToTop()" [class.show]="showScrollButton">
+
+</button>
+}

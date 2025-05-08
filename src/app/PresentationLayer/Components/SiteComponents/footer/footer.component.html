@@ -1,0 +1,85 @@
+<footer class="py-5">
+  <div class="container">
+    @if(windowSize.width>768)
+    {
+    <div class="row">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="logo d-flex justify-content-center align-items-center">
+          <img src="Assets/Images/logoWhite.png" alt=" شركة تصدير المحاصيل الزراعية" width="150px" height="50px">
+        </div>
+        <div class="icons   d-flex justify-content-between align-items-center" style="width: 180px;">
+          @if (company.twitterUrl!=null && company.twitterUrl!=""&&company.twitterUrl!="undefined") {
+          <a [href]="company.twitterUrl" target="_blank"><img src="Assets/Images/Twitter.png" alt="Twitter"></a>
+          }
+          @else {
+          <a [href]=""><img src="Assets/Images/Twitter.png" alt="Twitter"></a>
+          }
+          @if (company.facebookUrl!=null && company.facebookUrl!=""&&company.facebookUrl!="undefined") {
+          <a [href]="company.facebookUrl" target="_blank"><img src="Assets/Images/Facebook.png" alt="Facebook"></a>
+          }
+          @else {
+          <a [href]=""><img src="Assets/Images/Facebook.png" alt="Facebook"></a>
+          }
+          @if (company.instgramUrl!=null && company.instgramUrl!=""&&company.instgramUrl!="undefined") {
+          <a [href]="company.instgramUrl" target="_blank"><img src="Assets/Images/Instgram.png" alt="Instagram"></a>
+          }
+          @else {
+          <a [href]=""><img src="Assets/Images/Instgram.png" alt="Instagram"></a>
+          }
+          <a [href]="'https://wa.me/' + company.phone" target="_blank"><img src="Assets/Images/Whatsapp.png"
+              alt="WhatsApp"></a>
+
+        </div>
+      </div>
+    </div>
+    <hr class="my-5" style="color: #FFFFFF !important; font-weight: 900;">
+
+    <div class="row">
+      <div class="d-flex justify-content-center flex-wrap justify-content-lg-between">
+        <div class="right text-center text-lg-end col-lg-4 col-md-6 col-12 mb-3">
+          <h3 class="h3-style">الرئيسية</h3>
+          <p class="mb-3">المنتجات</p>
+          <p class="mb-3">التصدير</p>
+          <p class="mb-3">النقل والشحن</p>
+          <p class="mb-2 " style="cursor: pointer;" (click)="openWhatsapp()">الدعم الفني</p>
+        </div>
+        <div class="middle text-center text-lg-end col-lg-4 col-md-6 col-12 mb-3">
+          <h3>قائمة المنتجات</h3>
+          <p class="mb-3">الثوم</p>
+          <p class="mb-3">البصل</p>
+          <p class="mb-3">الحبوب</p>
+          <p class="mb-3">البقوليات</p>
+        </div>
+        <div class="left text-center col-lg-4 col-md-6 col-12 mb-3">
+          <h3>تواصل معنا</h3>
+          <p class="mb-0">البريد الالكتروني</p>
+          <p class="mb-2">{{company.gmail}}</p>
+          <p class="mb-0">رقم الهاتف</p>
+          <p class="mb-2">{{company.phone}}</p>
+          <p class="mb-0">العنوان</p>
+          <p class="mb-2">مصر - المنيا - سلاقوسة</p>
+        </div>
+      </div>
+    </div>
+    }
+    @else {
+    <div class="logo d-flex justify-content-center align-items-center">
+      <img src="Assets/Images/logoWhite.png" alt=" شركة تصدير المحاصيل الزراعية" width="260px" height="100px">
+    </div>
+
+    <div class="anchorsOnMobile mt-4  d-flex justify-content-center flex-wrap align-items-center">
+      <a href="" class="col-4">تواصل معنا</a>
+      <a href="" class="col-4"> المزيد عن شركة الصابر</a>
+      <a href="" class="col-4"> خداماتنا</a>
+      <a href="" class="col-4"> سياسية الخصوصية</a>
+      <a href="" class="col-4"> شروط الخدمة</a>
+
+    </div>
+    }
+
+    <hr class="my-3" style="color: #FFFFFF !important; font-weight: 900;">
+
+    <p class="copyrighy">Abdelrahman Salah & Islam Mohammed © {{year}} All Rights Reserved</p>
+
+  </div>
+</footer>

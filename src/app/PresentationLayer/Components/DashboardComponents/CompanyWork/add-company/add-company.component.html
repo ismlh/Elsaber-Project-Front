@@ -1,0 +1,88 @@
+<form #newCompany="ngForm" (ngSubmit)="AddCompanyData()">
+
+  <!-- Company Name Input -->
+  <div class="mb-3">
+    <label for="name">اســـم الـــشركـــة</label>
+    <input type="text" class="form-control my-3" placeholder="اســـم الـــشركـــة" #name="ngModel" required
+      [(ngModel)]="company.name" name="name" id="name" />
+    <!-- Show error messages for User Name -->
+    <div *ngIf="name.invalid && name.touched" class="text-danger">
+      <div *ngIf="name.errors?.['required']">اســـم الـــشركـــة مـــطــلوب</div>
+
+    </div>
+  </div>
+
+  <!-- Company description Input -->
+  <div class="mb-3">
+    <label for="description">وصــــف الـــشركـــة</label>
+    <input type="text" class="form-control my-3" placeholder="وصــــف  الـــشركـــة" #description="ngModel"
+      [(ngModel)]="company.description" name="description" id="description" />
+  </div>
+
+  <!-- Company Title Input -->
+  <div class="mb-3">
+    <label for="title">عــــنـوان الـــشركـــة</label>
+    <input type="text" class="form-control my-3" placeholder="عــــنـوان الـــشركـــة" #title="ngModel"
+      [(ngModel)]="company.title" name="title" id="title" />
+  </div>
+
+  <!-- User Phone Input -->
+  <div class="mb-3">
+    <label for="phone">هـــاتــف الـــشركـــة</label>
+    <input type="text" class="form-control my-3" placeholder="هـــاتــف الـــشركـــة" #phone="ngModel"
+      pattern="^01(0|1|2|5)[0-9]{8}$" required [(ngModel)]="company.phone" id="phone" name="phone" />
+    <!-- Show error messages for User Phone -->
+    <div *ngIf="phone.invalid && phone.touched">
+      <div *ngIf="phone.errors?.['required']">هـــاتــف الـــشركـــة مـــطــلـوب</div>
+      <div *ngIf="phone.errors?.['pattern']"> هـــاتــف الـــشركـــة يــجــب أن يـكـتـب بــطــريـقـه صــحــيــحــه(e.g.,
+        01127414507).
+      </div>
+    </div>
+  </div>
+
+  <!-- Company Gmail Input -->
+  <div class="mb-3">
+    <label for="gmail">البريد الالكتروني للشركه</label>
+    <input type="email" class="form-control my-3" placeholder=" البريد الالكتروني" #gmail="ngModel"
+      [(ngModel)]="company.gmail" name="gmail" id="gmail" />
+  </div>
+
+  <!-- Company facebookUrl Input -->
+  <div class="mb-3">
+    <label for="facebookUrl">رابـــط الـــفـيـسـبـوك</label>
+    <input type="text" class="form-control my-3" placeholder="رابـــط الـــفـيـسـبـوك" #facebookUrl="ngModel"
+      [(ngModel)]="company.facebookUrl" id="facebookUrl" name="facebookUrl" />
+  </div>
+
+
+  <!-- Company instgramUrl Input -->
+  <div class="mb-3">
+    <label for="instgramUrl">رابـــط الانــســتــجــرام للشركه</label>
+    <input type="text" class="form-control my-3" placeholder="رابـــط الانــســتــجــرام" #instgramUrl="ngModel"
+      [(ngModel)]="company.instgramUrl" id="instgramUrl" name="instgramUrl" />
+  </div>
+
+
+  <!-- Company youtubeUrl Input -->
+  <div class="mb-3">
+    <label for="youtubeUrl">رابـــط الـــيــوتــيــوب للشركه</label>
+    <input type="text" class="form-control my-3" placeholder="رابـــط الـــيــوتــيــوب" #youtubeUrl="ngModel"
+      [(ngModel)]="company.youtubeUrl" name="youtubeUrl" id="youtubeUrl" />
+  </div>
+
+
+  <!-- Company twitterUrl Input -->
+  <div class="mb-3">
+    <label for="twitterUrl">رابط تــويــتــر الـــشركـــة</label>
+    <input type="text" class="form-control my-3" placeholder="رابـــط تــويــتــر" #twitterUrl="ngModel"
+      [(ngModel)]="company.twitterUrl" name="twitterUrl" id="twitterUrl" />
+  </div>
+
+  <div class="mb-3">
+    <label for="logoUrl" class="form-label d-block">اخــتــار الـــــــصــــــــوره</label>
+    <input type="file" (change)="onFileSelected($event)" required id="logoUrl" name="logoUrl">
+  </div>
+
+  <button type="submit" [disabled]="newCompany.invalid"
+    class="btn btn-outline-success form-control my-3">اضـــافــة</button>
+</form>

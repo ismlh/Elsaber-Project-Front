@@ -1,0 +1,55 @@
+<form #UserMessageEdit="ngForm" (ngSubmit)="EditUserMessage()">
+
+  <!-- User FName Input -->
+  <div>
+    <input type="text" class="form-control my-3" placeholder="الاســـم الاول للـــعــمــيل" #fName="ngModel" required
+      [(ngModel)]="UserMessage.fName" name="fName" />
+    <!-- Show error messages for User Name -->
+    <div *ngIf="fName.invalid && fName.touched" class="text-danger">
+      <div *ngIf="fName.errors?.['required']">اســـم الـــعــمــيل مـــطــلوب</div>
+    </div>
+  </div>
+
+  <!-- User LName Input -->
+  <div>
+    <input type="text" class="form-control my-3" placeholder="الاســـم الثاني للـــعــمــيل" #lName="ngModel" required
+      [(ngModel)]="UserMessage.lName" name="lName" />
+    <!-- Show error messages for User Name -->
+    <div *ngIf="lName.invalid && lName.touched" class="text-danger">
+      <div *ngIf="lName.errors?.['required']"> الاســـم الثاني للـــعــمــيل مـــطــلوب</div>
+    </div>
+  </div>
+
+
+
+  <!-- UserMessage message Input -->
+  <div>
+    <input type="text" class="form-control my-3" placeholder="الــــرســـالــــه" #message="ngModel"
+      [(ngModel)]="UserMessage.message" name="message" />
+  </div>
+
+
+
+  <!-- User Phone Input -->
+  <div>
+    <input type="text" class="form-control my-3" placeholder="هـــاتــف الـــعــمــيل " #phoneNumber="ngModel"
+      pattern="^01(0|1|2|5)[0-9]{8}$" required [(ngModel)]="UserMessage.phoneNumber" name="phoneNumber" />
+    <!-- Show error messages for User Phone -->
+    <div *ngIf="phoneNumber.invalid && phoneNumber.touched">
+      <div *ngIf="phoneNumber.errors?.['required']">هـــاتــف الـــعــمــيل مـــطــلـوب</div>
+      <div *ngIf="phoneNumber.errors?.['pattern']"> هـــاتــف الـــعــمــيل يــجــب أن يـكـتـب بــطــريـقـه
+        صــحــيــحــه(e.g.,
+        01127414507).
+      </div>
+    </div>
+  </div>
+
+  <!-- UserMessage Email Input -->
+  <div>
+    <input type="text" class="form-control my-3" placeholder=" ايــــمـــيـــل الـــعــمــيل" #email="ngModel"
+      [(ngModel)]="UserMessage.email" name="email" />
+  </div>
+
+  <button type="submit" [disabled]="UserMessageEdit.invalid"
+    class="btn btn-outline-success form-control my-3">حـــفـــظ</button>
+</form>

@@ -1,0 +1,27 @@
+<form #newQuestion="ngForm" (ngSubmit)="addQuestion()">
+
+  <!-- Question Input -->
+  <div>
+    <input type="text" class="form-control my-3" placeholder="ادخــــل الــســوال " #question="ngModel" required
+      [(ngModel)]="Question.question" name="question" />
+    <!-- Show error messages for question -->
+    <div *ngIf="question.invalid && question.touched" class="text-danger">
+      <div *ngIf="question.errors?.['required']">يرجـــي ادخــــال الــســوال</div>
+
+    </div>
+  </div>
+
+  <!-- Answer Input -->
+  <div>
+    <input type="text" class="form-control my-3" placeholder="ادخــــل الاجــابــة " #answer="ngModel" required
+      [(ngModel)]="Question.answer" name="answer" />
+    <!-- Show error messages for answer -->
+    <div *ngIf="answer.invalid && answer.touched" class="text-danger">
+      <div *ngIf="answer.errors?.['required']">يرجـــي ادخــــال الاجــابــة</div>
+
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="newQuestion.invalid"
+    class="btn btn-outline-success form-control my-3">اضـــافــة</button>
+</form>

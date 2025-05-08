@@ -1,0 +1,28 @@
+.main {
+  background-image: url("/Assets/Images/ProoductsPage/8899.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.centerElement {
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center; /* vertical */
+  height: 100vh;
+}
+
+.contactform {
+  background-color: #f9f9f9;
+  border-radius: 32px;
+  padding: 32px;
+}
+form label {
+  font-size: 18px;
+  color: #000000;
+  font-weight: border;
+}
+.btn {
+  background-color: #ff7d00;
+  color: #fff;
+  border-radius: 16px;
+}

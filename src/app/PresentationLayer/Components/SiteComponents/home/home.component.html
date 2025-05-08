@@ -1,0 +1,50 @@
+<div class="row mx-auto container mt-5 mb-5 justify-content-center">
+  <div class="col-lg-8 order-2 order-lg-1">
+    <h2 class="fw-bolder h2-title">{{companyData.name}} {{companyData.title}}</h2>
+    <p class="text-muted fs-5">{{companyData.description}}</p>
+    <div class="buttons row d-flex justify-content-between flex-wrap">
+      <button class="contactUs " (click)="OpenWhatsApp()"> <img class="mx-2" width="24" height="24"
+          src="Assets/Images/HomeImages/phone.png">تـــواصل
+        مــعــنــا</button>
+      <button class="our-poducts" (click)="openYoutube()"> <img class="mx-2" width="24" height="24"
+          src="Assets/Images/HomeImages/Youtube.png">
+        مـــحــاصــيــلــنــا</button>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-6 order-1 order-lg-2 ">
+    <div class="image-container">
+      <img class="img-fluid" [src]="'data:image/jpeg;base64,'+companyData.logoUrl" alt="home image">
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <app-services></app-services>
+</div>
+
+<app-orders></app-orders>
+
+<div class="products py-5" style="background-color: #B0DFB0;">
+  <h2 class="text-center" style="color: #044D1D; font-weight: bolder; ">الــــمــنــتـــجـــات</h2>
+  <div class="row container mx-auto mt-4 mb-5 justify-content-center">
+    <div class="col-lg-4 col-md-6 mb-3">
+      <img src="Assets/Images/HomeImages/cart home.png" alt="فـــواكـــه مــصــريــه عالـــية الـــجــوده"
+        class="img-fluid" width="100%" height="100%">
+    </div>
+    <div class="col-lg-4 col-md-6 mb-3">
+      <img src="Assets/Images/HomeImages/cart home (1).png" alt="ثــوم مــصــري عالـــي الـــجــوده" class="img-fluid"
+        width="100%" height="100%">
+    </div>
+    <div class="col-lg-4 col-md-6  mb-3">
+      <img src="Assets/Images/HomeImages/cart home (2).png" alt="بــصــل  مــصــري عالـــي الـــجــوده"
+        class="img-fluid" width="100%" height="100%">
+    </div>
+  </div>
+</div>
+<app-taghleef></app-taghleef>
+
+<app-question-and-answer></app-question-and-answer>
+
+<app-contact-with-us></app-contact-with-us>
+
+<app-contactandinquiries></app-contactandinquiries>

@@ -1,0 +1,70 @@
+<div class="contactandinquiries  py-4" id="contactandinquiries">
+  <div class="row  container  mx-auto d-flex justify-content-between">
+    <div class="contatct  col-lg-6 offset-lg-1  mb-5" style="height: 720px;">
+      <h2 class="h2-style">للتواصل والاستفسارات</h2>
+      <form (ngSubmit)="SendMessage()" #contactForm="ngForm">
+
+        <div class="row">
+          <div class="col-lg-6  col-12">
+            <!-- User FName Input -->
+            <div class="mb-4">
+              <label for="fName" class="form-label">الاســـم الاول </label>
+              <input type="text" class="form-control my-1" placeholder="الاســـم الاول " #fName="ngModel" required
+                [(ngModel)]="UserMessage.fName" name="fName" id="fName" />
+              <!-- Show error messages for User Name -->
+              <div *ngIf="fName.invalid && fName.touched" class="text-danger">
+                <div *ngIf="fName.errors?.['required']">الاسم الاول مـــطــلوب</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6  col-12">
+            <!-- User LName Input -->
+            <div class="mb-4">
+              <label for="lName" class="form-label">الاســـم الثاني </label>
+              <input type="text" class="form-control my-1" placeholder="الاســـم الثاني " #lName="ngModel" required
+                [(ngModel)]="UserMessage.lName" name="lName" id="lName" />
+              <!-- Show error messages for User Name -->
+              <div *ngIf="lName.invalid && lName.touched" class="text-danger">
+                <div *ngIf="lName.errors?.['required']"> الاســـم الثاني مـــطــلوب</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- User Phone Input -->
+        <div class="mb-4">
+          <label for="phoneNumber" class="form-label">رقم الهاتف </label>
+          <input type="text" class="form-control my-1" placeholder="رقم الهاتف " #phoneNumber="ngModel" required
+            [(ngModel)]="UserMessage.phoneNumber" name="phoneNumber" id="phoneNumber" />
+          <!-- Show error messages for User Phone -->
+          <div *ngIf="phoneNumber.invalid && phoneNumber.touched" class="text-danger">
+            <div *ngIf="phoneNumber.errors?.['required']">الهاتف مـــطــلـوب</div>
+          </div>
+        </div>
+
+        <!-- UserMessage Email Input -->
+        <div class="mb-4">
+          <label for="email" class="form-label">البريد الالـــكترونــي</label>
+          <input type="text" class="form-control my-1" placeholder="  البريد الالـــكترونــي" #email="ngModel"
+            [(ngModel)]="UserMessage.email" name="email" id="email" />
+        </div>
+
+        <!-- UserMessage message Input -->
+        <div class="">
+          <label for="message" class="form-label">رسالتك</label>
+
+          <textarea class="form-control my-1" placeholder="رسالتك" #message="ngModel" [(ngModel)]="UserMessage.message"
+            name="message" id="message" style="width: 100%; height: 128px;"></textarea>
+        </div>
+
+        <button type="submit" [disabled]="!contactForm.valid" title="ادخل البيانات المطلوبه"
+          class="form-control mt-3 submitbutton">ابدأ محادثتك معنا الآن</button>
+      </form>
+    </div>
+    <div class="col-lg-5" style="height: 720px;">
+      <img src="Assets/Images/HomeImages/Map.png" class="img" alt="مصر-محافظة المنيا -سلاقوسة" width="100%"
+        height="100%">
+    </div>
+  </div>
+</div>

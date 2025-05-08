@@ -1,0 +1,51 @@
+/* Shared styles for all image containers */
+.image-container {
+  position: relative;
+  margin-bottom: 70px;
+}
+
+/* Common styles for all labels */
+.image-container::after {
+  position: absolute;
+  top: 93%;
+  right: 11%;
+  width: 270px;
+  height: 62px;
+  background-color: #b0dfb0;
+  color: #044d1d;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 62px;
+  border-radius: 10px;
+  vertical-align: middle;
+}
+
+/* Specific content for each label */
+.first-image::after {
+  content: "اقـــفـــاص";
+}
+
+.second-image::after {
+  content: "الأكياس الشبكية";
+}
+
+.third-image::after {
+  content: "صناديق بلاستيكية";
+}
+.h2-style {
+  font-size: 64px !important;
+}
+.p-style {
+  font-size: 24px;
+  line-height: 1.5 !important;
+}
+@media screen and (max-width: 768px) {
+  .h2-style {
+    font-size: 28px !important;
+  }
+  .p-style {
+    font-size: 18px;
+    line-height: 1.5 !important;
+  }
+}

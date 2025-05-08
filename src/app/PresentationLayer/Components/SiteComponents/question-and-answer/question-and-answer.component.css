@@ -1,0 +1,45 @@
+.h2-style {
+  font-family: "cairo-bold", sans-serif;
+  font-size: 34px;
+  color: var(--main-color);
+  text-align: center;
+}
+
+.question {
+  min-height: 34px;
+  background: #027d02;
+  color: #fff;
+  border-radius: 15px 12px 0px 0px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 5px;
+  letters-spacing: 0.5px;
+  font-family: "cairo-bold", sans-serif;
+  background-color: var(--main-color);
+  cursor: pointer;
+}
+.question span {
+  font-family: "cairo-bold", sans-serif;
+  font-size: 24px;
+  color: #fff;
+  line-height: 29px;
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .h2-style {
+    font-size: 28px;
+  }
+  .question span {
+    font-size: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .h2-style {
+    font-size: 18px;
+  }
+  .question span {
+    font-size: 16px;
+  }
+}
