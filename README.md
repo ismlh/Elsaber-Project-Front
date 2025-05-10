@@ -25,6 +25,8 @@ Interceptors:
 
 For displaying a loader during HTTP requests
 
+
+
 For attaching authorization tokens to outgoing HTTP requests
 
 Guards – to protect routes and restrict unauthorized access
@@ -32,3 +34,9 @@ Guards – to protect routes and restrict unauthorized access
 Services – for handling business logic and API communication
 
 Standalone Components – used instead of traditional Angular modules for better scalability (if applicable)
+
+
+- Back End Repo :: https://github.com/ismlh/EmployeeManagmentSystem-WebAPI- 
+
+- Live Preview :: https://elsaper.netlify.app/
+
